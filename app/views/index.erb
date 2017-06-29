@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Recipes</title>
+  </head>
+  <body>
+    <label> <h1>List of Recipes</h1> </label>
+    <label><a href="/recipes/new">Create New Recipe</a></label>
+    <%@recipes.each do |recipe|%>
+    <h2><%=recipe.name%></h2>
+    <li> <%=recipe.ingredients%> </li>
+    <li><%=recipe.cook_time%> </li>
+    <a href=<%="/recipes/#{recipe.id}"%>>View Recipe</a>
+    <%end%>
+  </body>
+</html>
